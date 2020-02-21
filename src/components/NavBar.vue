@@ -2,8 +2,8 @@
   <div>
     <nav>
       <div class="container">
-        <div class="menuMobile dropdown">
-          <img @click="myFunction()" class="dropbtn" src="@/assets/img/mobile_Menu.png" alt="">
+        <div v-clickoutside="hideMenu" class="menuMobile dropdown">
+          <img @click="menu()" class="dropbtn" src="@/assets/img/mobile_Menu.png" alt="">
           <ol id="myDropdown" class="dropdown-content">
             <li><a href="">Site Institucional</a></li>
             <li><a href="">Fale Conosco</a></li>
@@ -35,11 +35,41 @@
 export default {
   name: "NavBar",
     methods: {
-    menu: function myFunction() {
-        const dropdown = document.getElementById("myDropdown");
-        dropdown.classList.toggle("dropdown-content");
-    }
-  }  
+    menu: function () {
+      const dropdown = document.getElementById("myDropdown");
+      if (dropdown.style.display === "none") {
+        dropdown.style.display = "block";
+      } else {
+        dropdown.style.display = "none";
+      }
+    },
+    hideMenu: function () {
+      const dropdown = document.getElementById("myDropdown");
+      dropdown.style.display = "none";
+    },
+  },
+   directives: {
+        clickoutside: {
+            bind: function(el, binding, vnode) {
+                el.clickOutsideEvent = function(event) {
+                    // here I check that click was outside the el and his childrens
+                    if (!(el == event.target || el.contains(event.target))) {
+                        // and if it did, call method provided in attribute value
+                        vnode.context[binding.expression](event);
+                    }
+                };
+                document.body.addEventListener("click", el.clickOutsideEvent);
+                document.body.addEventListener("touchstart", el.clickOutsideEvent);
+            },
+            unbind: function(el) {
+                document.body.removeEventListener("click", el.clickOutsideEvent);
+                document.body.removeEventListener("touchstart", el.clickOutsideEvent);
+            },
+            stopProp(event) {
+                event.stopPropagation();
+            }
+        }
+    },
 };
 
 </script>
