@@ -29,7 +29,7 @@
         </div>
         <h2>Resultado</h2>
         <div class="row">
-          <div v-bind:key="product" v-for="product in products" class="product">
+          <div v-bind:key="product.id" v-for="product in products" class="product">
             <img src="@/assets/img/lid.png" alt="">
             <img class="badges" src="@/assets/img/product_badges.png" alt="">
             <h3>{{ product.name }}</h3>
@@ -53,72 +53,84 @@ export default {
     return {
       products: [
         {
+          id: 1,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         },
         {
+          id: 2,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         },
         {
+          id: 3,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         },
         {
+          id: 4,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         },
         {
+          id: 5,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         },
         {
+          id: 6,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         },
         {
+          id: 7,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         }, 
         {
+          id: 8,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         },
         {
+          id: 9,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         },
         {
+          id: 10,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         },
         {
+          id: 11,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
           subPrice: 20.00,
         },
         {
+          id: 12,
           name: "Atlas Duraguard",
           description: "Universal - Oval, Linha Care e Alto Fluxo",
           price: 100.00,
