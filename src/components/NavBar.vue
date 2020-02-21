@@ -159,6 +159,7 @@ nav {
     top: 80px;
     height: 150px;
     border: 1px solid $light-grey;
+    box-shadow: $nav-shadow;
     img {
       display: inline-block;
       margin: 15px 0 15px 85px;
