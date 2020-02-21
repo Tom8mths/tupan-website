@@ -5,8 +5,8 @@ const app = express();
 const server = require('http').createServer(app).listen(port);
 
 app.get('/', function (req, res) {
-	res.sendFile(path.resolve(__dirname + '/dist/js/index.html'));
+	res.sendFile(path.resolve(__dirname + '/dist/index.html'));
 });
-app.use(express.static(path.resolve(__dirname + '/dist/js')));
+app.use(express.static(path.resolve(__dirname + '/dist')));
 
 console.log(`Server started at http://localhost:${server.address().port}`);
